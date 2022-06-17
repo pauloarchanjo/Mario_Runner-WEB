@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Press Start 2P', cursive;
+    background: rgb(75, 30, 0)
+}
+
+.bg-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    z-index: 1;
+}
+
+.pontos{
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    font-size: 3rem;
+    background: #000;
+    padding: 7px 2px 0 7px;
+    border: 2px solid #fff;
+    color: rgb(247, 231, 9);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    z-index: 1;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 16px ridge #007a04;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#42add8, #caeffd);
+}
+
+.clouds{
+    position: absolute;
+    top: 10px;
+    width: 500px;
+    animation: clouds-animation 10s linear infinite;
+}
+
+.pipe{
+    position: absolute;
+    bottom: -20px;
+    width: 70px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 600ms ease-out;
+}
+
+@keyframes pipe-animation{
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .game-board{
+        height: 400px;
+    }
+
+    .mario{
+        width: 100px;
+    }
+
+    .logo{
+        width: 70%;
+    }
+    
+}
