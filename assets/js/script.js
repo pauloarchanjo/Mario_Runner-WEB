@@ -1,7 +1,10 @@
+//Constantes
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const refresh = document.querySelector('.refresh');
 const pts = document.getElementById('pts');
 
+//Pulo do Mario
 const jump = () => {
     mario.classList.add('jump');
 
@@ -10,10 +13,12 @@ const jump = () => {
     }, 400);
 }
 
+//Contador de pontos
 let contador = 0;
 
 pts.innerHTML = contador;
 
+//Loop Principal
 const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
@@ -29,7 +34,7 @@ const loop = setInterval(() => {
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
 
-        mario.src = './assets/images/game-over.png';
+        mario.src = './assets/images/png/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
@@ -41,5 +46,20 @@ const loop = setInterval(() => {
 
 }, 10);
 
-document.addEventListener('keydown',  jump);  
+//Reload da página
+    refresh.addEventListener('click', () => {
+        location.reload()
+    })
+
+//Controle do Mario
+document.addEventListener('keydown',  function(event) {
+    if(event.key === 'ArrowUp'){
+        jump();
+    }
+});
+
+//Refresh da pagina
+refresh.AddEventListener('click', () => {
+    location.reload();
+})
 
